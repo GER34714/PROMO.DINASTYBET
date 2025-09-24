@@ -12,8 +12,8 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 // Números que querés dejar fijos de antemano
 const numerosFijos = [73, 44, 87, 93];
 
-// ✅ Solo Facu en formato internacional (Argentina)
-const cajeros = ['+5491125127839'];
+// ✅ Solo Joaki en formato internacional (Argentina)
+const cajeros = ['+5491123365501'];
 let indiceCajero = 0; // no rota porque solo hay uno
 
 // Archivo de almacenamiento de reservas
@@ -35,7 +35,7 @@ app.get('/api/bloqueados', (req, res) => {
   }
 });
 
-// 🔹 Cajero (siempre Facu)
+// 🔹 Cajero (siempre Joaki)
 app.get('/api/cajero', (req, res) => {
   const numero = cajeros[indiceCajero];
   indiceCajero = (indiceCajero + 1) % cajeros.length;
